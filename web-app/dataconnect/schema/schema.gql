@@ -1,0 +1,67 @@
+type SchoolInfo @table {
+  name: String!
+  motto: String!
+  description: String!
+  mission: String!
+  vision: String!
+  contactEmail: String!
+  phoneNumber: String!
+  address: String!
+  postalCode: String!
+  city: String!
+  region: String!
+  country: String!
+  history: String
+  values: String
+  educationalApproachDescription: String
+  socialMediaLinks: [String]
+  googleMapsEmbedUrl: String
+}
+
+type News @table {
+  title: String!
+  content: String!
+  publishedDate: Timestamp!
+  author: String!
+  imageUrl: String
+  category: String
+}
+
+type Event @table {
+  title: String!
+  description: String!
+  eventDate: Date!
+  startTime: String!
+  endTime: String!
+  location: String
+  imageUrl: String
+  targetAudience: String
+  registrationLink: String
+}
+
+type Gallery @table {
+  name: String!
+  description: String!
+  coverImageUrl: String
+}
+
+type Photo @table {
+  imageUrl: String!
+  caption: String!
+  description: String
+  takenDate: Date
+}
+
+type GalleryPhoto @table(key: ["gallery", "photo"]) {
+  gallery: Gallery!
+  photo: Photo!
+}
+
+type Page @table {
+  title: String!
+  slug: String!
+  content: String!
+  featuredImage: String
+  metaDescription: String
+  parentPageId: UUID
+}
