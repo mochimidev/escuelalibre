@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Descubre tu metodología de estudio | Escuela Libre</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fbfcff;
+        --sky: #f2f7ff;
+        --mint: #eefaf5;
+        --peach: #edf2ff;
+        --lav: #f7f9ff;
+        --pink: #dfe8f8;
+        --card: #ffffff;
+        --text: #25303b;
+        --muted: #5f6b76;
+        --radius: 22px;
+        --shadow: 0 18px 40px rgba(56, 76, 96, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Nunito", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(223, 232, 248, 0.5), transparent 34%),
+          radial-gradient(circle at top right, rgba(238, 250, 245, 0.95), transparent 24%),
+          linear-gradient(180deg, var(--sky), var(--bg));
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 24px 0 36px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 18px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.74);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(223, 232, 248, 0.7);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand img {
+        width: 54px;
+        height: 54px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 8px 18px rgba(40, 50, 60, 0.14);
+      }
+
+      .brand h1 {
+        margin: 0;
+        font-family: "Baloo 2", sans-serif;
+        font-size: clamp(1.25rem, 2vw, 1.8rem);
+        line-height: 1;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        border-radius: 999px;
+        background: var(--mint);
+        border: 1px solid rgba(223, 232, 248, 0.8);
+        font-weight: 700;
+      }
+
+      .hero {
+        margin-top: 22px;
+        padding: 34px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 251, 224, 0.9));
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(223, 232, 248, 0.8);
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+        gap: 24px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 12px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: var(--mint);
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .hero h2 {
+        margin: 0 0 12px;
+        font-family: "Baloo 2", sans-serif;
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        line-height: 0.98;
+      }
+
+      .hero p,
+      .result p,
+      .quiz-intro p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .quiz-card,
+      .result {
+        margin-top: 22px;
+        padding: 28px;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255, 214, 214, 0.45);
+      }
+
+      .quiz-intro {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
+      .progress {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .bar {
+        width: 180px;
+        max-width: 40vw;
+        height: 12px;
+        border-radius: 999px;
+        background: #f0f2f7;
+        overflow: hidden;
+      }
+
+      .bar > span {
+        display: block;
+        height: 100%;
+        width: 0%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #dfe8f8, #eefaf5, #f7f9ff);
+        transition: width 0.35s ease;
+      }
+
+      .question {
+        padding: 18px 0 8px;
+        border-top: 1px solid rgba(255, 214, 214, 0.55);
+      }
+
+      .question:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .question h3 {
+        margin: 0 0 12px;
+        font-size: 1.15rem;
+      }
+
+      .options {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .option {
+        display: block;
+        padding: 14px 16px;
+        border-radius: 18px;
+        border: 1px solid rgba(119, 130, 144, 0.2);
+        background: linear-gradient(180deg, #fff, #fffaf6);
+        cursor: pointer;
+        transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .option:hover,
+      .option.selected {
+        transform: translateY(-2px);
+        border-color: rgba(159, 183, 216, 0.95);
+        box-shadow: 0 10px 20px rgba(159, 183, 216, 0.2);
+      }
+
+      .option strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .btn {
+        appearance: none;
+        border: 0;
+        border-radius: 999px;
+        padding: 14px 18px;
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #dfe8f8, #eefaf5);
+        box-shadow: 0 12px 24px rgba(159, 183, 216, 0.22);
+      }
+
+      .btn-secondary {
+        background: #f4f7fb;
+        color: #314150;
+      }
+
+      .result {
+        display: none;
+      }
+
+      .result.active {
+        display: block;
+      }
+
+      .badge {
+        display: inline-flex;
+        margin-bottom: 12px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: var(--mint);
+        font-weight: 800;
+      }
+
+      .result-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(250px, 0.7fr);
+        gap: 18px;
+        align-items: start;
+      }
+
+      .result h3 {
+        margin: 0 0 12px;
+        font-family: "Baloo 2", sans-serif;
+        font-size: clamp(1.6rem, 3vw, 2.3rem);
+      }
+
+      .summary-card {
+        padding: 18px;
+        border-radius: 22px;
+        background: linear-gradient(180deg, rgba(255, 251, 224, 0.85), rgba(243, 247, 255, 0.95));
+        border: 1px solid rgba(255, 214, 214, 0.55);
+      }
+
+      .summary-card ul {
+        margin: 12px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 860px) {
+        .hero,
+        .result-grid,
+        .quiz-intro {
+          grid-template-columns: 1fr;
+        }
+
+        .options {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .back-link {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand">
+          <img src="Logos/logovertical.png" alt="Logo Escuela Libre" />
+          <div>
+            <h1>Descubre tu metodología de estudio</h1>
+            <p style="margin: 4px 0 0; color: var(--muted);">Un quiz local para explorar cómo aprendes mejor.</p>
+          </div>
+        </div>
+        <a class="back-link" href="index.html#descubre-tu-metodologia">← Volver a la portada</a>
+      </header>
+
+      <section class="hero" id="inicio">
+        <div>
+          <span class="eyebrow">Quiz de orientación</span>
+          <h2>Conoce qué estilo de estudio se parece más a ti.</h2>
+          <p>
+            Responde 5 preguntas rápidas y mira si te acomoda más aprender en proyectos, con apoyo visual, en movimiento, de forma autónoma o junto a otras personas.
+          </p>
+          <div class="actions">
+            <button class="btn btn-primary" type="button" id="startQuiz">Comenzar quiz</button>
+            <a class="btn btn-secondary" href="index.html#metodologia">Ir a metodología</a>
+          </div>
+        </div>
+        <div class="summary-card">
+          <strong style="display:block; font-size:1.1rem; margin-bottom:8px;">Qué vas a descubrir</strong>
+          <ul>
+            <li>Si aprendes mejor creando o investigando.</li>
+            <li>Si te ayuda más leer, moverte o conversar.</li>
+            <li>Una recomendación de enfoque para estudiar con más claridad.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="quiz-card" id="quizCard">
+        <div class="quiz-intro">
+          <div>
+            <h2 style="margin:0 0 10px; font-family:'Baloo 2', sans-serif;">Responde con honestidad y sin apuro</h2>
+            <p>Elige la alternativa que más se parece a tu forma natural de estudiar. No hay respuestas buenas o malas.</p>
+          </div>
+          <div class="progress" aria-live="polite">
+            <div class="bar" aria-hidden="true"><span id="progressBar"></span></div>
+            <span id="progressText">0/5</span>
+          </div>
+        </div>
+
+        <form id="quizForm">
+          <div class="question" data-question="1">
+            <h3>1. Cuando aprendes algo nuevo, prefieres...</h3>
+            <div class="options">
+              <label class="option"><input type="radio" name="q1" value="proyectos" hidden /> <strong>Hacer un proyecto</strong>Investigar, probar y construir algo propio.</label>
+              <label class="option"><input type="radio" name="q1" value="visual" hidden /> <strong>Ver ejemplos claros</strong>Organizar ideas con esquemas, colores o imágenes.</label>
+              <label class="option"><input type="radio" name="q1" value="movimiento" hidden /> <strong>Moverte mientras aprendes</strong>Caminar, manipular y aprender con el cuerpo.</label>
+              <label class="option"><input type="radio" name="q1" value="social" hidden /> <strong>Conversarlo con alguien</strong>Explicar y escuchar otras miradas.</label>
+            </div>
+          </div>
+
+          <div class="question" data-question="2">
+            <h3>2. Tu cuaderno ideal se parece más a...</h3>
+            <div class="options">
+              <label class="option"><input type="radio" name="q2" value="visual" hidden /> <strong>Un mapa visual</strong>Mucho orden, títulos y dibujos.</label>
+              <label class="option"><input type="radio" name="q2" value="proyectos" hidden /> <strong>Un taller de ideas</strong>Notas, recortes y pruebas de trabajo.</label>
+              <label class="option"><input type="radio" name="q2" value="social" hidden /> <strong>Un cuaderno compartido</strong>Preguntas, respuestas y diálogo.</label>
+              <label class="option"><input type="radio" name="q2" value="movimiento" hidden /> <strong>Un espacio libre</strong>Esquemas rápidos y mucha acción.</label>
+            </div>
+          </div>
+
+          <div class="question" data-question="3">
+            <h3>3. En una clase o estudio largo, te sirve más...</h3>
+            <div class="options">
+              <label class="option"><input type="radio" name="q3" value="movimiento" hidden /> <strong>Hacer pausas activas</strong>Estirarte, caminar o cambiar de postura.</label>
+              <label class="option"><input type="radio" name="q3" value="visual" hidden /> <strong>Ver la estructura</strong>Entender primero el orden general.</label>
+              <label class="option"><input type="radio" name="q3" value="social" hidden /> <strong>Explicar en voz alta</strong>Hablar para fijar ideas.</label>
+              <label class="option"><input type="radio" name="q3" value="proyectos" hidden /> <strong>Resolver un reto</strong>Aplicar el contenido de inmediato.</label>
+            </div>
+          </div>
+
+          <div class="question" data-question="4">
+            <h3>4. Si te dan libertad para estudiar, eliges...</h3>
+            <div class="options">
+              <label class="option"><input type="radio" name="q4" value="proyectos" hidden /> <strong>Un desafío concreto</strong>Algo que puedas terminar paso a paso.</label>
+              <label class="option"><input type="radio" name="q4" value="visual" hidden /> <strong>Una guía ordenada</strong>Listas, ejemplos y colores.</label>
+              <label class="option"><input type="radio" name="q4" value="social" hidden /> <strong>Estudiar en grupo</strong>Compartir ideas y corregirse juntos.</label>
+              <label class="option"><input type="radio" name="q4" value="movimiento" hidden /> <strong>Aprender haciendo</strong>Materiales, movimiento y práctica.</label>
+            </div>
+          </div>
+
+          <div class="question" data-question="5">
+            <h3>5. Al recordar una lección, normalmente recuerdas mejor...</h3>
+            <div class="options">
+              <label class="option"><input type="radio" name="q5" value="visual" hidden /> <strong>La imagen mental</strong>Cómo se veía la información.</label>
+              <label class="option"><input type="radio" name="q5" value="social" hidden /> <strong>La conversación</strong>Lo que dijiste o escuchaste.</label>
+              <label class="option"><input type="radio" name="q5" value="proyectos" hidden /> <strong>Lo que construiste</strong>La actividad o proyecto que hiciste.</label>
+              <label class="option"><input type="radio" name="q5" value="movimiento" hidden /> <strong>Lo que hiciste con el cuerpo</strong>Una dinámica, juego o experiencia.</label>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Ver resultado</button>
+            <button class="btn btn-secondary" type="reset">Reiniciar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="result" id="resultCard" aria-live="polite">
+        <span class="badge">Tu resultado aparecerá aquí</span>
+        <div class="result-grid">
+          <div>
+            <h3 id="resultTitle">Aún no has respondido el quiz</h3>
+            <p id="resultText">Completa el cuestionario para descubrir el enfoque de estudio que mejor se alinea contigo y para volver luego a la portada si quieres comparar con la metodología de la escuela.</p>
+            <div class="actions">
+              <a class="btn btn-secondary" href="index.html#descubre-tu-metodologia">Volver a la sección</a>
+              <button class="btn btn-primary" type="button" id="backButton">Volver atrás</button>
+            </div>
+          </div>
+          <div class="summary-card">
+            <strong style="display:block; font-size:1.05rem; margin-bottom:8px;">Orientación</strong>
+            <p id="resultHint">Cuando envíes el quiz, aquí verás una recomendación breve para estudiar mejor según tu perfil dominante.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const quizForm = document.getElementById("quizForm");
+      const progressBar = document.getElementById("progressBar");
+      const progressText = document.getElementById("progressText");
+      const resultCard = document.getElementById("resultCard");
+      const resultTitle = document.getElementById("resultTitle");
+      const resultText = document.getElementById("resultText");
+      const resultHint = document.getElementById("resultHint");
+      const backButton = document.getElementById("backButton");
+      const startQuiz = document.getElementById("startQuiz");
+
+      const profiles = {
+        proyectos: {
+          title: "Aprendizaje por proyectos",
+          text: "Te motiva aprender creando, investigando y resolviendo retos concretos. Sueles entender mejor cuando conviertes la teoría en algo práctico y visible.",
+          hint: "Te ayudan los desafíos reales, las metas cortas y los trabajos con propósito."
+        },
+        visual: {
+          title: "Aprendizaje visual y organizado",
+          text: "Aprendes mejor cuando la información está ordenada, con referencias claras, colores, ejemplos y una estructura fácil de seguir.",
+          hint: "Te sirven esquemas, mapas conceptuales y resúmenes breves."
+        },
+        movimiento: {
+          title: "Aprendizaje en movimiento",
+          text: "Tu aprendizaje mejora cuando participas con el cuerpo, manipulas materiales y mantienes una experiencia activa y concreta.",
+          hint: "Las pausas activas, las dinámicas y el aprendizaje práctico te favorecen mucho."
+        },
+        social: {
+          title: "Aprendizaje colaborativo",
+          text: "Retienes mejor las ideas cuando conversas, explicas y compartes el proceso con otras personas. El intercambio te ordena el pensamiento.",
+          hint: "Estudiar acompañado, debatir y enseñar a otro te resulta especialmente útil."
+        }
+      };
+
+      const questionCount = 5;
+
+      function updateProgress() {
+        const answered = Array.from(quizForm.querySelectorAll("input[type='radio']:checked")).length;
+        const percentage = (answered / questionCount) * 100;
+        progressBar.style.width = `${percentage}%`;
+        progressText.textContent = `${answered}/${questionCount}`;
+      }
+
+      function setSelectedStyles(input) {
+        const labels = quizForm.querySelectorAll(".option");
+        labels.forEach((label) => label.classList.remove("selected"));
+
+        if (!input) {
+          return;
+        }
+
+        const label = input.closest("label");
+        if (label) {
+          label.classList.add("selected");
+        }
+      }
+
+      quizForm.addEventListener("change", (event) => {
+        if (event.target.matches("input[type='radio']")) {
+          setSelectedStyles(event.target);
+          updateProgress();
+        }
+      });
+
+      quizForm.addEventListener("reset", () => {
+        window.setTimeout(() => {
+          progressBar.style.width = "0%";
+          progressText.textContent = "0/5";
+          setSelectedStyles(null);
+          resultCard.classList.remove("active");
+          resultTitle.textContent = "Aún no has respondido el quiz";
+          resultText.textContent = "Completa el cuestionario para descubrir el enfoque de estudio que mejor se alinea contigo y para volver luego a la portada si quieres comparar con la metodología de la escuela.";
+          resultHint.textContent = "Cuando envíes el quiz, aquí verás una recomendación breve para estudiar mejor según tu perfil dominante.";
+        }, 0);
+      });
+
+      quizForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const answers = Array.from(quizForm.querySelectorAll("input[type='radio']:checked"));
+        if (answers.length < questionCount) {
+          resultCard.classList.add("active");
+          resultTitle.textContent = "Te falta completar algunas preguntas";
+          resultText.textContent = "Responde las 5 preguntas para obtener un resultado más confiable y útil.";
+          resultHint.textContent = "Revisa el progreso superior: te mostrará cuántas respuestas llevas.";
+          resultCard.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+
+        const scores = {};
+        answers.forEach((answer) => {
+          scores[answer.value] = (scores[answer.value] || 0) + 1;
+        });
+
+        const [winnerKey] = Object.entries(scores).sort((a, b) => b[1] - a[1])[0];
+        const profile = profiles[winnerKey] || profiles.proyectos;
+
+        resultCard.classList.add("active");
+        resultTitle.textContent = profile.title;
+        resultText.textContent = profile.text;
+        resultHint.textContent = profile.hint;
+        resultCard.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      backButton.addEventListener("click", () => {
+        if (window.history.length > 1) {
+          window.history.back();
+          return;
+        }
+
+        window.location.href = "index.html#descubre-tu-metodologia";
+      });
+
+      startQuiz.addEventListener("click", () => {
+        quizForm.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      updateProgress();
+    </script>
+  </body>
+</html>

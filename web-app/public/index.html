@@ -10,12 +10,12 @@
     />
     <style>
       :root {
-      --bg: #fffbea;         /* Fondo principal: blanco cálido */
-      --sky: #f7faff;        /* Azul muy claro, casi blanco */
-      --mint: #fffbe0;       /* Amarillo pastel suave */
-      --peach: #ffe4e1;      /* Rojo pastel muy suave */
-      --lav: #f3f7ff;        /* Azul pastel claro (más suave) */
-      --pink: #ffd6d6;       /* Rojo rosado claro */
+      --bg: #fbfcff;         /* Fondo principal: blanco frío */
+      --sky: #f2f7ff;        /* Azul muy claro, casi blanco */
+      --mint: #eefaf5;       /* Verde agua suave y limpio */
+      --peach: #edf2ff;      /* Azul pálido suave */
+      --lav: #f7f9ff;        /* Azul pastel claro */
+      --pink: #dfe8f8;       /* Azul grisáceo claro */
       --card: #ffffff;       /* Fondo de tarjetas: blanco */
       --text: #222;          /* Texto principal: negro suave */
       --muted: #555;         /* Texto secundario: gris oscuro */
@@ -107,18 +107,22 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 28px;
-        background: var(--mint);
-        border-bottom: 4px dotted var(--pink);
+        gap: 16px;
+        padding: 16px 4px 16px 16px;
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(255, 214, 214, 0.75);
+        box-shadow: 0 10px 30px rgba(50, 50, 80, 0.06);
         position: sticky;
         top: 0;
         z-index: 1000;
       }
 
-      .logo {
+      .header-brand {
         display: flex;
         align-items: center;
         gap: 10px;
+        min-width: 0;
       }
 
       .logo-circle {
@@ -145,32 +149,114 @@
         white-space: nowrap; 
       }
 
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border: 2px solid rgba(207, 221, 241, 0.95);
+        border-radius: 18px;
+        background: transparent;
+        box-shadow: none;
+        cursor: pointer;
+        flex-shrink: 0;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .nav-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #444;
+        border-radius: 999px;
+        position: relative;
+      }
+
+      .nav-toggle span::before,
+      .nav-toggle span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        background: #444;
+        border-radius: 999px;
+      }
+
+      .nav-toggle span::before {
+        top: -6px;
+      }
+
+      .nav-toggle span::after {
+        top: 6px;
+      }
+
+      nav {
+        margin-left: auto;
+        margin-right: 0;
+        position: relative;
+      }
+
       nav ul {
-        display: flex;
+        display: none;
+        position: fixed;
+        right: 4px;
+        top: 76px;
+        width: max-content;
+        min-width: 240px;
+        max-width: calc(100vw - 8px);
+        max-height: calc(100vh - 92px);
+        padding: 8px 10px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.97);
+        border: 1px solid rgba(207, 221, 241, 0.7);
+        box-shadow: 0 18px 32px rgba(50, 50, 80, 0.12);
         list-style: none;
-        gap: 16px;
+        gap: 6px;
+        flex-direction: column;
+        align-items: flex-end;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        z-index: 1001;
+      }
+
+      nav.open ul {
+        display: flex;
       }
 
       nav a {
-        padding: 8px 14px;
-        border-radius: 12px;
-        background: white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(207, 221, 241, 0.7);
+        box-shadow: 0 6px 14px rgba(50, 50, 80, 0.05);
         font-weight: 600;
         color: #555;
         transition: all 0.2s;
+        width: auto;
+        white-space: nowrap;
+        text-align: center;
       }
 
       nav a:hover {
         background: var(--lav);
         color: #222;
+        transform: translateY(-1px);
       }
 
       .hero {
         display: grid;
-        grid-template-columns: 1fr 380px;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
         gap: 24px;
         align-items: center;
-        padding: 40px 28px;
+        padding: clamp(22px, 3vw, 40px) clamp(16px, 3vw, 28px);
       }
 
       .hero-text {
@@ -197,7 +283,7 @@
         margin-top: 15px;
         padding: 10px 16px;
         border-radius: 12px;
-        background: linear-gradient(90deg, var(--peach), var(--lav));
+        background: linear-gradient(90deg, var(--mint), var(--lav));
         font-weight: 700;
         color: #333;
         transition: transform 0.2s;
@@ -221,7 +307,13 @@
       }
 
       section {
-        padding: 30px 28px;
+        padding: clamp(20px, 2.5vw, 30px) clamp(16px, 3vw, 28px);
+      }
+
+      img,
+      video,
+      iframe {
+        max-width: 100%;
       }
 
       h3 {
@@ -235,16 +327,16 @@
           font-size: 22px;
           color: #555;
           margin: 20px 0 10px;
-          border-bottom: 2px solid var(--peach);
+          border-bottom: 2px solid var(--pink);
           padding-bottom: 5px;
       }
       
       /* ESTILOS PARA EL CONTENIDO DETALLADO */
       .detail-section {
-          max-width: 900px;
+          width: min(100%, 900px);
           margin: 0 auto 30px;
           background: white;
-          padding: 30px;
+          padding: clamp(20px, 2.4vw, 30px);
           border-radius: var(--radius);
           box-shadow: var(--shadow);
           line-height: 1.6;
@@ -319,7 +411,7 @@
         text-align: center;
         font-size: 14px;
         color: #555;
-        border-top: 4px dotted var(--peach);
+        border-top: 4px dotted var(--pink);
       }
       
       .social {
@@ -350,13 +442,31 @@
       /* Pantallas medianas (como tablets) */
       @media (max-width: 1024px) {
           header {
-              padding: 15px 20px;
+              padding: 15px 4px 15px 14px;
+            flex-wrap: wrap;
           }
           h1 {
               font-size: 22px;
           }
+          .header-brand {
+            flex: 1 1 auto;
+          }
+          .nav-toggle {
+            order: 3;
+            margin-left: auto;
+          }
+          nav ul {
+            min-width: 240px;
+            width: max-content;
+            max-width: calc(100vw - 8px);
+            right: 4px;
+            max-height: calc(100vh - 88px);
+          }
+          nav.open ul {
+            flex-direction: column;
+          }
           nav a {
-              padding: 6px 10px;
+            justify-content: center;
           }
       }
 
@@ -366,27 +476,30 @@
           grid-template-columns: 1fr; /* Apila el texto y la imagen */
         }
         
-        /* HEADER: Apila el logo y el menú de navegación */
         header {
-          flex-direction: column;
-          gap: 15px;
-          padding-bottom: 20px;
+          padding-bottom: 18px;
+        }
+
+        .nav-toggle {
+          width: 44px;
+          height: 44px;
+          margin-right: 0;
+        }
+
+        nav ul {
+          min-width: 230px;
+          width: max-content;
+          max-width: calc(100vw - 8px);
+          right: 4px;
+          left: auto;
+          grid-template-columns: 1fr;
+          max-height: calc(100vh - 84px);
         }
 
         h1 {
             font-size: 20px;
             white-space: normal; /* Permite que el texto del logo se divida en dos líneas */
             text-align: center;
-        }
-        
-        nav ul {
-          flex-wrap: wrap; /* Permite que los elementos del menú se envuelvan */
-          justify-content: center;
-          gap: 8px; /* Reduce el espacio */
-        }
-        
-        nav a {
-            font-size: 14px;
         }
 
         /* Ajuste de padding general */
@@ -397,6 +510,30 @@
         
         .grid-2 {
             grid-template-columns: 1fr;
+        }
+
+        .detail-section {
+            padding: 18px;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        .swiper.mySwiper {
+          width: 100% !important;
+          max-width: 100%;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        .swiper-slide {
+          height: 130px;
+        }
+
+        .swiper-slide img {
+          width: 96px;
+          height: 96px;
         }
         
         .hero-text h2 {
@@ -425,13 +562,52 @@
         }, 2500);
       });
     </script>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        const nav = document.getElementById('main-nav');
+        const toggle = document.querySelector('.nav-toggle');
+
+        if (!nav || !toggle) {
+          return;
+        }
+
+        const closeMenu = () => {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        };
+
+        toggle.addEventListener('click', function () {
+          const isOpen = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        nav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            if (window.innerWidth <= 1024) {
+              closeMenu();
+            }
+          });
+        });
+
+        document.addEventListener('keydown', function (event) {
+          if (event.key === 'Escape') {
+            closeMenu();
+          }
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 1024) {
+            closeMenu();
+          }
+        });
+      });
+    </script>
     <header>
-      <div style="display: flex; align-items: center;">
-        <img src="Logos/logovertical.png" alt="Logo Escuela Libre" style="height:48px; width:auto; border-radius:12px; margin-right:12px;" />
+      <div class="header-brand">
+        <img src="Logos/logovertical.png" alt="Logo Escuela Libre" style="height:48px; width:auto; border-radius:12px;" />
+        <h1>Escuela Libre Infancia Invaluable</h1>
       </div>
-      <h1>Escuela Libre Infancia Invaluable</h1>
-    </div>
-    <nav>
+    <nav id="main-nav">
       <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#proyecto">Proyecto</a></li>
@@ -439,10 +615,14 @@
           <li><a href="#actividades-clave">Actividades</a></li>
           <li><a href="#pedagogia">Pedagogía</a></li>
           <li><a href="#metodologia">Metodología</a></li>
+          <li><a href="#descubre-tu-metodologia">Quiz</a></li>
           <li><a href="#validacion">Validación</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
+      <button class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <span></span>
+      </button>
     </header>
 
     <section class="hero" id="inicio">
@@ -521,14 +701,14 @@
         }
         .swiper-button-next,
         .swiper-button-prev {
-          color: #ffd6d6; /* Usa el color pastel rosado claro de la página */
+          color: #9fb7d8; /* Usa un azul suave y limpio */
         }
         .swiper-pagination-bullet {
-          background: #ffe4e1; /* Rojo pastel muy suave */
+          background: #dfe8f8; /* Azul grisáceo claro */
           opacity: 1;
         }
         .swiper-pagination-bullet-active {
-          background: #ffd6d6; /* Pastel rosado claro */
+          background: #9fb7d8; /* Azul suave */
         }
         @media (max-width: 600px) {
           .swiper-slide {
@@ -603,22 +783,22 @@
         <img src="png/ODS_libreinfancia/ods3.jpeg" alt="ODS 3">
           </div>
           <div class="swiper-slide" data-ods="4">
-        <img src="png/ODS_libreinfancia/ods4.png" alt="ODS 4">
+        <img src="png/ODS_libreinfancia/ODS4.png" alt="ODS 4">
           </div>
           <div class="swiper-slide" data-ods="5">
         <img src="png/ODS_libreinfancia/ods5.jpeg" alt="ODS 5">
           </div>
           <div class="swiper-slide" data-ods="10">
-        <img src="png/ODS_libreinfancia/ods10.png" alt="ODS 10">
+        <img src="png/ODS_libreinfancia/ODS10.png" alt="ODS 10">
           </div>
           <div class="swiper-slide" data-ods="12">
-        <img src="png/ODS_libreinfancia/ods12.png" alt="ODS 12">
+        <img src="png/ODS_libreinfancia/ODS12.png" alt="ODS 12">
           </div>
           <div class="swiper-slide" data-ods="13">
         <img src="png/ODS_libreinfancia/ods13.png" alt="ODS 13">
           </div>  
           <div class="swiper-slide" data-ods="15">
-        <img src="png/ODS_libreinfancia/ods15.png" alt="ODS 15">
+        <img src="png/ODS_libreinfancia/ODS15.png" alt="ODS 15">
           </div>
           <div class="swiper-slide" data-ods="16">
         <img src="png/ODS_libreinfancia/ods16.png" alt="ODS 16">
@@ -647,7 +827,7 @@
         text: "La escuela promueve el bienestar físico y emocional de los niños, mediante actividades al aire libre y educación saludable."
           },
           4: {
-        img: "png/ODS_libreinfancia/ods4.png",
+        img: "png/ODS_libreinfancia/ODS4.png",
         title: "ODS 4: Educación de Calidad",
         text: "Cumplimiento directo. El proyecto se centra en garantizar una educación inclusiva, equitativa y de calidad, y en promover oportunidades de aprendizaje durante toda la vida para todos. La escuela fomenta el aprendizaje libre, inclusivo y equitativo, permitiendo que los estudiantes descubran y aprendan a su propio ritmo, más allá de la escolarización tradicional."
           },
@@ -657,12 +837,12 @@
         text: "Compromiso social. Busca lograr la igualdad entre los géneros y empoderar a todas las mujeres y las niñas. La escuela fomenta el respeto, la colaboración y la diversidad en el aprendizaje conjunto, creando un ambiente de igualdad y empoderamiento para todos los estudiantes, sin distinción de género."
           },
           10: {
-        img: "png/ODS_libreinfancia/ods10.png",
+        img: "png/ODS_libreinfancia/ODS10.png",
         title: "ODS 10: Reducción de las Desigualdades",
         text: "La escuela trabaja para reducir desigualdades sociales y educativas, integrando a todos los niños y familias."
           },
           12: {
-        img: "png/ODS_libreinfancia/ods12.png",
+        img: "png/ODS_libreinfancia/ODS12.png",
         title: "ODS 12: Producción y Consumo Responsables",
         text: "Se enseñan prácticas responsables como el compostaje y el cuidado del entorno, promoviendo el consumo consciente."
           },
@@ -674,7 +854,7 @@
           },
 
           15: {
-        img: "png/ODS_libreinfancia/ods15.png",
+        img: "png/ODS_libreinfancia/ODS15.png",
         title: "ODS 15: Vida de Ecosistemas Terrestres",
         text: "Compromiso ambiental. La escuela se enfoca en gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras y detener la pérdida de biodiversidad. Lo logra a través de huertos, compostaje y el contacto directo con la naturaleza, educando a los niños como guardianes del ecosistema."
           },
@@ -813,26 +993,26 @@
 
         <section id="actividades-clave" style="background: linear-gradient(180deg, var(--mint), var(--lav));">
           <h3>✨ Actividades Clave del Proyecto</h3>
-          <div class="detail-section" style="border: 2px solid #ffd6d6; background: rgba(255,255,255,0.92);">
+          <div class="detail-section" style="border: 2px solid #dfe8f8; background: rgba(255,255,255,0.92);">
             <p>Estas actividades sostienen el aprendizaje cotidiano y conectan a los niños con la tierra, el arte, la lectura, la ciencia y la convivencia.</p>
             <div class="grid-2">
-              <div class="card" style="border: 2px solid var(--peach); border-radius: 16px; background: linear-gradient(180deg, #fffdf7, #fff4ef);">
+              <div class="card" style="border: 2px solid var(--pink); border-radius: 16px; background: linear-gradient(180deg, #ffffff, #f6f9ff);">
                 <h4 style="font-size: 18px; margin-top: 0;">🌱 Huerto Escolar</h4>
                 <p>Los niños cultivan, siembran y cosechan. Aprenden sobre ciclos de vida, sostenibilidad y nutrición de forma práctica.</p>
               </div>
-              <div class="card" style="border: 2px solid var(--peach); border-radius: 16px; background: linear-gradient(180deg, #fffdf7, #fff4ef);">
+              <div class="card" style="border: 2px solid var(--pink); border-radius: 16px; background: linear-gradient(180deg, #ffffff, #f6f9ff);">
                 <h4 style="font-size: 18px; margin-top: 0;">🎨 Arte y Creatividad</h4>
                 <p>Talleres de pintura, escultura, música y teatro que permiten expresar emociones y desarrollar el pensamiento creativo.</p>
               </div>
-              <div class="card" style="border: 2px solid var(--peach); border-radius: 16px; background: linear-gradient(180deg, #fffdf7, #fff4ef);">
+              <div class="card" style="border: 2px solid var(--pink); border-radius: 16px; background: linear-gradient(180deg, #ffffff, #f6f9ff);">
                 <h4 style="font-size: 18px; margin-top: 0;">📚 Lectura en Comunidad</h4>
                 <p>Espacios de lectura compartida, cuentacuentos y biblioteca viva donde la literatura alimenta la imaginación.</p>
               </div>
-              <div class="card" style="border: 2px solid var(--peach); border-radius: 16px; background: linear-gradient(180deg, #fffdf7, #fff4ef);">
+              <div class="card" style="border: 2px solid var(--pink); border-radius: 16px; background: linear-gradient(180deg, #ffffff, #f6f9ff);">
                 <h4 style="font-size: 18px; margin-top: 0;">🔬 Exploración Científica</h4>
                 <p>Experimentos, observación de fenómenos naturales y investigación que despiertan la curiosidad sobre el mundo.</p>
               </div>
-              <div class="card" style="border: 2px solid var(--peach); border-radius: 16px; background: linear-gradient(180deg, #fffdf7, #fff4ef);">
+              <div class="card" style="border: 2px solid var(--pink); border-radius: 16px; background: linear-gradient(180deg, #ffffff, #f6f9ff);">
                 <h4 style="font-size: 18px; margin-top: 0;">🤝 Juegos Cooperativos</h4>
                 <p>Dinámicas colaborativas que desarrollan empatía, comunicación y habilidades socioemocionales desde el movimiento.</p>
               </div>
@@ -846,7 +1026,7 @@
           <div class="cards" style="margin-top: 30px;">
             <!-- Tarjeta 1 -->
             <div class="card">
-              <div style="background: linear-gradient(135deg, #ffd6d6, #ffe4e1); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
+              <div style="background: linear-gradient(135deg, #dfe8f8, #eefaf5); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
                 <h4 style="font-size: 20px; border: none; margin: 0; color: #333;">🎯 Aprendizaje Activo</h4>
               </div>
               <h4 style="margin-bottom: 10px; border: none; font-size: 18px; text-align: left;">Talleres y Experiencias Prácticas</h4>
@@ -856,7 +1036,7 @@
 
             <!-- Tarjeta 2 -->
             <div class="card">
-              <div style="background: linear-gradient(135deg, #f3f7ff, #f7faff); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
+              <div style="background: linear-gradient(135deg, #f7f9ff, #eefaf5); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
                 <h4 style="font-size: 20px; border: none; margin: 0; color: #333;">📚 Lectura y Diálogo</h4>
               </div>
               <h4 style="margin-bottom: 10px; border: none; font-size: 18px; text-align: left;">Pensamiento Crítico y Reflexión</h4>
@@ -866,7 +1046,7 @@
 
             <!-- Tarjeta 3 -->
             <div class="card">
-              <div style="background: linear-gradient(135deg, #ffd6d6, #ffc0c0); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
+              <div style="background: linear-gradient(135deg, #eefaf5, #f7f9ff); padding: 20px; border-radius: 12px; margin-bottom: 15px;">
                 <h4 style="font-size: 20px; border: none; margin: 0; color: #333;">🎭 Juego y Comunidad</h4>
               </div>
               <h4 style="margin-bottom: 10px; border: none; font-size: 18px; text-align: left;">Habilidades Socioemocionales</h4>
@@ -907,6 +1087,14 @@
             <li><strong>Vínculo Cultural</strong> (Conexión con el entorno rural y tradiciones).</li>
         </ul>
         </div>
+        </section>
+
+        <section id="descubre-tu-metodologia" style="background: linear-gradient(180deg, var(--lav), var(--bg));">
+          <h3>🧭 Descubre tu metodología de estudio</h3>
+          <div class="detail-section" style="text-align: center; background: rgba(255,255,255,0.95);">
+            <p>Si quieres explorar qué enfoque de aprendizaje se acerca más a tu manera de estudiar, entra al quiz local y revisa tu resultado en una página aparte. Desde ahí también puedes volver a esta sección cuando quieras.</p>
+            <a href="quiz.html" class="cta" style="display: inline-block; margin-top: 10px;">Ir al quiz de metodología</a>
+          </div>
         </section>
         
         <section id="validacion">
