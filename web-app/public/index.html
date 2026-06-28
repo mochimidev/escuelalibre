@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuela Libre Infancia Invaluable</title>
+    <meta
+      name="description"
+      content="Aprendizaje profundo en la naturaleza con estudios validados por el MINEDUC."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#FDFBF7",
+              forest: "#5A7160",
+              sage: "#7C9082",
+              moss: "#DDE5DE",
+              sand: "#EFE5D5",
+              ink: "#1F2937",
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["Lato", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 20px 60px rgba(49, 63, 53, 0.10)",
+              card: "0 18px 40px rgba(58, 77, 65, 0.10)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-cream font-body text-gray-800 antialiased">
+    <div class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-[36rem] bg-[radial-gradient(circle_at_top,_rgba(124,144,130,0.20),_transparent_55%)]"></div>
+      <div class="pointer-events-none absolute left-[-4rem] top-[34rem] h-64 w-64 rounded-full bg-sand/70 blur-3xl"></div>
+      <div class="pointer-events-none absolute right-[-2rem] top-[58rem] h-72 w-72 rounded-full bg-moss/70 blur-3xl"></div>
+
+      <header class="sticky top-0 z-50 border-b border-[#E8E1D5] bg-white/95 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+          <a href="#inicio" class="flex items-center">
+            <img
+              src="Logos/logovertical.png"
+              alt="Logo Escuela Libre Infancia Invaluable"
+              class="h-12 w-auto object-contain sm:h-14"
+            />
+          </a>
+
+          <nav class="hidden items-center gap-8 text-sm font-bold uppercase tracking-[0.18em] text-gray-600 md:flex">
+            <a href="#inicio" class="transition hover:text-forest">Inicio</a>
+            <a href="#bioaula" class="transition hover:text-forest">Bioaula</a>
+            <a href="#metodologia" class="transition hover:text-forest">Metodología</a>
+          </nav>
+
+          <a
+            href="quiz.html"
+            class="inline-flex items-center justify-center rounded-full bg-forest px-4 py-3 text-center text-[11px] font-black uppercase tracking-[0.18em] text-white shadow-lg shadow-emerald-900/10 transition hover:-translate-y-0.5 hover:bg-sage sm:px-6 sm:text-xs"
+          >
+            Descubre tu metodología
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section id="inicio" class="relative flex min-h-[85vh] items-center overflow-hidden">
+          <img
+            src="png/otrasimagenes/niñosjugandoenelcampo.jpg"
+            alt="Niños jugando y aprendiendo en la naturaleza"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black/45"></div>
+          <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(22,30,24,0.72),rgba(22,30,24,0.20)_58%,rgba(22,30,24,0.62))]"></div>
+
+          <div class="relative mx-auto grid w-full max-w-7xl gap-10 px-4 py-24 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
+            <div class="text-center lg:text-left">
+              <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-white/90 backdrop-blur-md">
+                Aprendizaje profundo • comunidad viva • bioaula
+              </span>
+              <h1 class="mt-6 font-display text-4xl leading-[0.95] text-white sm:text-5xl md:text-6xl xl:text-7xl">
+                EDUCACIÓN QUE RESPETA EL RITMO NATURAL DE LA INFANCIA
+              </h1>
+              <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/85 lg:mx-0 lg:text-lg">
+                Aprendizaje profundo en la naturaleza con estudios validados por el MINEDUC.
+                Una experiencia educativa que cultiva autonomía, curiosidad y conciencia socioambiental.
+              </p>
+
+              <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
+                <a
+                  href="#bioaula"
+                  class="inline-flex items-center justify-center rounded-full bg-[#F8F5EE] px-7 py-4 text-sm font-black uppercase tracking-[0.16em] text-forest shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  Explora la Bioaula
+                </a>
+                <a
+                  href="quiz.html"
+                  class="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/12 px-7 py-4 text-sm font-black uppercase tracking-[0.16em] text-white backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white/20"
+                >
+                  Ver Evaluación Online
+                </a>
+              </div>
+            </div>
+
+            <div class="hidden items-end justify-end lg:flex">
+              <div class="max-w-sm rounded-[2rem] border border-white/15 bg-white/14 p-6 text-white shadow-soft backdrop-blur-xl">
+                <img
+                  src="Logos/logovertical.png"
+                  alt="Identidad Escuela Libre Infancia Invaluable"
+                  class="h-16 w-auto object-contain"
+                />
+                <p class="mt-6 text-sm font-black uppercase tracking-[0.2em] text-white/75">
+                  Propuesta de valor
+                </p>
+                <p class="mt-3 text-base leading-7 text-white/88">
+                  Formación integral y personalizada en un entorno rural vivo, donde el afecto,
+                  la emoción y el aprendizaje académico avanzan juntos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute inset-x-0 bottom-0 text-cream">
+            <svg viewBox="0 0 1440 180" class="h-24 w-full sm:h-32" fill="currentColor" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0,96L48,106.7C96,117,192,139,288,144C384,149,480,139,576,117.3C672,96,768,64,864,69.3C960,75,1056,117,1152,128C1248,139,1344,117,1392,106.7L1440,96L1440,181L1392,181C1344,181,1248,181,1152,181C1056,181,960,181,864,181C768,181,672,181,576,181C480,181,384,181,288,181C192,181,96,181,48,181L0,181Z"></path>
+            </svg>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <div class="grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+            <div class="rounded-[2rem] border border-[#E8E1D5] bg-white/80 p-8 shadow-card backdrop-blur-sm">
+              <p class="text-xs font-black uppercase tracking-[0.3em] text-sage">Propuesta de valor</p>
+              <h2 class="mt-4 font-display text-3xl text-forest sm:text-4xl">
+                Aprendizaje profundo en la naturaleza con estudios validados por el MINEDUC
+              </h2>
+              <p class="mt-5 text-base leading-8 text-gray-600">
+                La Escuela Libre Infancia Invaluable es una institución ubicada en el entorno rural de
+                Ñirrimapu Maquehue, Padre las Casas, dedicada a la formación integral y personalizada.
+                Su trabajo se basa en metodologías no tradicionales, respetando el ritmo evolutivo de
+                cada niño para cultivar la curiosidad, la autonomía y la conciencia socioambiental.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+              <div class="rounded-[1.75rem] bg-forest px-6 py-7 text-white shadow-card">
+                <p class="text-3xl font-display">3 ha</p>
+                <p class="mt-2 text-sm uppercase tracking-[0.18em] text-white/75">Entorno natural vivo</p>
+              </div>
+              <div class="rounded-[1.75rem] bg-white px-6 py-7 shadow-card">
+                <p class="text-3xl font-display text-forest">ABP + Waldorf</p>
+                <p class="mt-2 text-sm uppercase tracking-[0.18em] text-gray-500">Metodologías activas</p>
+              </div>
+              <div class="rounded-[1.75rem] bg-white px-6 py-7 shadow-card">
+                <p class="text-3xl font-display text-forest">Validación</p>
+                <p class="mt-2 text-sm uppercase tracking-[0.18em] text-gray-500">Exámenes Libres MINEDUC</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="metodologia" class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div class="pointer-events-none absolute left-0 top-8 hidden opacity-80 lg:block">
+            <svg viewBox="0 0 180 220" class="h-44 w-36 text-[#D5B277]">
+              <path fill="currentColor" d="M50 8c-9 31-16 56-13 84 2 19 12 38 28 51-19-4-36-1-51 10 8-28 8-55-1-83C8 45 18 21 50 8Zm55 36c-28 20-47 39-58 65-7 18-6 39 3 58-15-12-32-17-51-16 19-22 31-46 37-76 7-27 24-47 69-31Zm20 77c-19 16-31 33-35 57-2 13 1 26 7 37-10-6-22-8-34-5 13-14 22-30 26-50 4-18 15-33 36-39Z" />
+            </svg>
+          </div>
+          <div class="pointer-events-none absolute right-0 top-0 hidden opacity-80 lg:block">
+            <svg viewBox="0 0 180 240" class="h-48 w-36 text-sage/70">
+              <path fill="currentColor" d="M89 8c12 27 13 53 7 81-5 24-19 46-39 60 24-3 47 4 66 22-4-29 0-56 12-84 12-28 4-58-46-79Zm-33 68c11 23 14 44 8 67-4 17-14 31-28 41 17-2 33 4 46 15-2-22 2-42 11-63 8-19 5-41-37-60Zm74 72c-8 15-11 30-8 47 2 10 7 19 14 25-11-2-21 1-30 8 1-16-2-31-9-46-7-14-6-31 33-34Z" />
+            </svg>
+          </div>
+
+          <div class="mx-auto max-w-3xl text-center">
+            <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Nuestra Filosofía</span>
+            <h2 class="mt-4 font-display text-4xl text-forest sm:text-5xl">
+              Un espacio donde la infancia puede desplegarse sin prisa
+            </h2>
+            <p class="mt-5 text-base leading-8 text-gray-600 sm:text-lg">
+              Diseñamos experiencias sensibles, orgánicas y profundamente humanas para acompañar a cada niño
+              desde su propio pulso vital.
+            </p>
+          </div>
+
+          <div class="mt-14 grid gap-6 md:grid-cols-3">
+            <article class="rounded-[2rem] border border-[#E8E1D5] bg-white/80 p-8 text-center shadow-card backdrop-blur-sm">
+              <div class="text-5xl">🕊️</div>
+              <h3 class="mt-5 font-display text-3xl text-forest">LIBERTAD</h3>
+              <p class="mt-4 text-base leading-7 text-gray-600">
+                Fomentamos la libre expresión, la creatividad y la autonomía en un ambiente seguro y consciente.
+              </p>
+            </article>
+
+            <article class="rounded-[2rem] border border-[#E8E1D5] bg-white/80 p-8 text-center shadow-card backdrop-blur-sm">
+              <div class="text-5xl">🌱</div>
+              <h3 class="mt-5 font-display text-3xl text-forest">NATURALEZA</h3>
+              <p class="mt-4 text-base leading-7 text-gray-600">
+                La bioaula es la extensión natural de la sala de clases y el corazón vivo del proyecto.
+              </p>
+            </article>
+
+            <article class="rounded-[2rem] border border-[#E8E1D5] bg-white/80 p-8 text-center shadow-card backdrop-blur-sm">
+              <div class="text-5xl">🤝</div>
+              <h3 class="mt-5 font-display text-3xl text-forest">RESPETO</h3>
+              <p class="mt-4 text-base leading-7 text-gray-600">
+                Respetamos el ritmo singular de cada infancia, su emocionalidad, su identidad y su forma de aprender.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div class="overflow-hidden rounded-[2rem] shadow-soft">
+              <img
+                src="png/Fotos_reales/Niñosmirandolanaturaleza.jpg"
+                alt="Niños mirando la naturaleza en la escuela"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <div>
+              <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Nuestro Proyecto</span>
+              <h2 class="mt-4 font-display text-4xl text-forest sm:text-5xl">
+                Quiénes somos, misión y visión
+              </h2>
+              <p class="mt-5 text-base leading-8 text-gray-600">
+                La Escuela Infancia Invaluable fue fundada en abril de 2023 como respuesta a la necesidad de ofrecer
+                una alternativa educativa de calidad para familias que buscan una educación libre y en armonía con la naturaleza.
+              </p>
+              <p class="mt-4 text-base leading-8 text-gray-600">
+                Ubicada en el sector rural Ñirrimapu Maquehue km 6, la escuela se asienta sobre tres hectáreas de áreas verdes.
+                Este entorno no es un telón de fondo: es parte activa del modelo educativo y de la estabilidad afectiva que buscamos cultivar.
+              </p>
+
+              <div class="mt-8 grid gap-5 sm:grid-cols-2">
+                <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+                  <h3 class="font-display text-2xl text-forest">Visión</h3>
+                  <p class="mt-3 text-sm leading-7 text-gray-600">
+                    Formar niños y niñas con conciencia social, autonomía, creatividad y liderazgo, capaces de relacionarse
+                    con respeto hacia sus semejantes y su entorno.
+                  </p>
+                </article>
+
+                <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+                  <h3 class="font-display text-2xl text-forest">Misión</h3>
+                  <p class="mt-3 text-sm leading-7 text-gray-600">
+                    Entregar una educación integral y personalizada que respete el desarrollo evolutivo del niño,
+                    uniendo afecto, emoción y objetivos académicos.
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div class="rounded-[2.2rem] border border-[#E8E1D5] bg-white/75 p-8 shadow-soft backdrop-blur-sm sm:p-10">
+            <div class="mx-auto max-w-3xl text-center">
+              <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Compromiso</span>
+              <h2 class="mt-4 font-display text-4xl text-forest sm:text-5xl">
+                Cumple con los Objetivos de Desarrollo Sostenible
+              </h2>
+              <p class="mt-5 text-base leading-8 text-gray-600">
+                Nuestra propuesta educativa se alinea con una formación más consciente, comunitaria y ecológica.
+              </p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+              <article class="rounded-[1.5rem] bg-cream p-4 text-center shadow-card">
+                <img src="png/ODS_libreinfancia/ods3.jpeg" alt="ODS 3 Salud y bienestar" class="mx-auto h-20 w-20 rounded-2xl object-cover" />
+                <p class="mt-3 text-sm font-bold text-gray-700">ODS 3</p>
+                <p class="text-xs uppercase tracking-[0.16em] text-gray-500">Salud y bienestar</p>
+              </article>
+              <article class="rounded-[1.5rem] bg-cream p-4 text-center shadow-card">
+                <img src="png/ODS_libreinfancia/ODS4.png" alt="ODS 4 Educación de calidad" class="mx-auto h-20 w-20 rounded-2xl object-cover" />
+                <p class="mt-3 text-sm font-bold text-gray-700">ODS 4</p>
+                <p class="text-xs uppercase tracking-[0.16em] text-gray-500">Educación de calidad</p>
+              </article>
+              <article class="rounded-[1.5rem] bg-cream p-4 text-center shadow-card">
+                <img src="png/ODS_libreinfancia/ods5.jpeg" alt="ODS 5 Igualdad de género" class="mx-auto h-20 w-20 rounded-2xl object-cover" />
+                <p class="mt-3 text-sm font-bold text-gray-700">ODS 5</p>
+                <p class="text-xs uppercase tracking-[0.16em] text-gray-500">Igualdad de género</p>
+              </article>
+              <article class="rounded-[1.5rem] bg-cream p-4 text-center shadow-card">
+                <img src="png/ODS_libreinfancia/ODS10.png" alt="ODS 10 Reducción de desigualdades" class="mx-auto h-20 w-20 rounded-2xl object-cover" />
+                <p class="mt-3 text-sm font-bold text-gray-700">ODS 10</p>
+                <p class="text-xs uppercase tracking-[0.16em] text-gray-500">Reducción de desigualdades</p>
+              </article>
+              <article class="rounded-[1.5rem] bg-cream p-4 text-center shadow-card">
+                <img src="png/ODS_libreinfancia/ODS12.png" alt="ODS 12 Producción y consumo responsables" class="mx-auto h-20 w-20 rounded-2xl object-cover" />
+                <p class="mt-3 text-sm font-bold text-gray-700">ODS 12</p>
+                <p class="text-xs uppercase tracking-[0.16em] text-gray-500">Consumo responsable</p>
+              </article>
+              <article class="rounded-[1.5rem] bg-cream p-4 text-center shadow-card">
+                <img src="png/ODS_libreinfancia/ods13.png" alt="ODS 13 Acción por el clima" class="mx-auto h-20 w-20 rounded-2xl object-cover" />
+                <p class="mt-3 text-sm font-bold text-gray-700">ODS 13</p>
+                <p class="text-xs uppercase tracking-[0.16em] text-gray-500">Acción por el clima</p>
+              </article>
+              <article class="rounded-[1.5rem] bg-cream p-4 text-center shadow-card">
+                <img src="png/ODS_libreinfancia/ODS15.png" alt="ODS 15 Vida de ecosistemas terrestres" class="mx-auto h-20 w-20 rounded-2xl object-cover" />
+                <p class="mt-3 text-sm font-bold text-gray-700">ODS 15</p>
+                <p class="text-xs uppercase tracking-[0.16em] text-gray-500">Ecosistemas terrestres</p>
+              </article>
+              <article class="rounded-[1.5rem] bg-cream p-4 text-center shadow-card">
+                <img src="png/ODS_libreinfancia/ods16.png" alt="ODS 16 Paz, justicia e instituciones sólidas" class="mx-auto h-20 w-20 rounded-2xl object-cover" />
+                <p class="mt-3 text-sm font-bold text-gray-700">ODS 16</p>
+                <p class="text-xs uppercase tracking-[0.16em] text-gray-500">Paz y justicia</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Qué hacemos</span>
+              <h2 class="mt-4 font-display text-4xl text-forest sm:text-5xl">
+                Educación integral, afectiva y conectada con la tierra
+              </h2>
+              <p class="mt-5 text-base leading-8 text-gray-600">
+                En la Escuela Libre Infancia Invaluable desarrollamos un modelo donde la educación va más allá de la
+                transmisión de conocimientos y se encarna en experiencias significativas.
+              </p>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-3">
+              <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+                <h3 class="font-display text-2xl text-forest">Autonomía</h3>
+                <p class="mt-3 text-sm leading-7 text-gray-600">
+                  Fomentamos que cada niño sea responsable de su propio aprendizaje y tome decisiones con libertad y límites claros.
+                </p>
+              </article>
+              <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+                <h3 class="font-display text-2xl text-forest">Respeto</h3>
+                <p class="mt-3 text-sm leading-7 text-gray-600">
+                  Valoramos la diversidad, la individualidad y el ritmo singular de cada estudiante y de su entorno.
+                </p>
+              </article>
+              <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+                <h3 class="font-display text-2xl text-forest">Convivencia</h3>
+                <p class="mt-3 text-sm leading-7 text-gray-600">
+                  Construimos comunidad desde la empatía, la cooperación y el diálogo cotidiano entre niños y educadores.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div class="rounded-[2.2rem] bg-forest px-6 py-10 text-white shadow-soft sm:px-10">
+            <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+              <div>
+                <span class="text-xs font-black uppercase tracking-[0.3em] text-white/65">Metodología</span>
+                <h2 class="mt-4 font-display text-4xl sm:text-5xl">
+                  Aprendizaje Basado en Proyectos + Enfoque Waldorf
+                </h2>
+              </div>
+              <div class="space-y-4 text-base leading-8 text-white/85">
+                <p>
+                  Combinamos metodologías innovadoras con una visión pedagógica humanista.
+                  Los estudiantes investigan, crean y experimentan a través de proyectos significativos conectados con su entorno.
+                </p>
+                <p>
+                  Respetamos el desarrollo evolutivo del niño integrando arte, música, movimiento y una conexión profunda con la tierra.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+            <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+              <p class="text-3xl">🌱</p>
+              <h3 class="mt-4 font-display text-2xl text-forest">Huerto Escolar</h3>
+              <p class="mt-3 text-sm leading-7 text-gray-600">
+                Cultivo, siembra y cosecha para aprender sostenibilidad, nutrición y ciclos de vida.
+              </p>
+            </article>
+            <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+              <p class="text-3xl">🎨</p>
+              <h3 class="mt-4 font-display text-2xl text-forest">Arte y Creatividad</h3>
+              <p class="mt-3 text-sm leading-7 text-gray-600">
+                Pintura, música, escultura y teatro como lenguajes de expresión emocional y pensamiento creativo.
+              </p>
+            </article>
+            <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+              <p class="text-3xl">📚</p>
+              <h3 class="mt-4 font-display text-2xl text-forest">Lectura en Comunidad</h3>
+              <p class="mt-3 text-sm leading-7 text-gray-600">
+                Cuentacuentos, lectura compartida y biblioteca viva para alimentar la imaginación y el lenguaje.
+              </p>
+            </article>
+            <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+              <p class="text-3xl">🔬</p>
+              <h3 class="mt-4 font-display text-2xl text-forest">Exploración Científica</h3>
+              <p class="mt-3 text-sm leading-7 text-gray-600">
+                Observación de fenómenos naturales y experiencias concretas que despiertan curiosidad sobre el mundo.
+              </p>
+            </article>
+            <article class="rounded-[1.75rem] border border-[#E8E1D5] bg-white p-6 shadow-card">
+              <p class="text-3xl">🤝</p>
+              <h3 class="mt-4 font-display text-2xl text-forest">Juegos Cooperativos</h3>
+              <p class="mt-3 text-sm leading-7 text-gray-600">
+                Dinámicas de colaboración que fortalecen empatía, comunicación y habilidades socioemocionales.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="bioaula" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <figure class="group overflow-hidden rounded-[1.8rem] shadow-soft sm:col-span-2">
+                <img
+                  src="png/otrasimagenes/aprenderconlatierra.png"
+                  alt="Aula rural y aprendizaje con la tierra"
+                  class="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-80"
+                />
+              </figure>
+              <figure class="group overflow-hidden rounded-[1.8rem] shadow-soft">
+                <img
+                  src="png/otrasimagenes/huerto_escolar_campo.jpg"
+                  alt="Huerto escolar en la bioaula"
+                  class="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </figure>
+              <figure class="group overflow-hidden rounded-[1.8rem] shadow-soft">
+                <img
+                  src="png/otrasimagenes/juegosalairelibre.jpg"
+                  alt="Juegos al aire libre"
+                  class="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+              </figure>
+            </div>
+
+            <div>
+              <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Metodología y Bioaula</span>
+              <h2 class="mt-4 font-display text-4xl text-forest sm:text-5xl">
+                El sello del proyecto está en aprender haciendo
+              </h2>
+              <p class="mt-5 text-base leading-8 text-gray-600">
+                La metodología considera el querer, el sentir y el pensar. Se privilegia un trabajo personalizado
+                y significativo con jornadas más cortas donde el juego tiene un lugar central.
+              </p>
+
+              <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                <div class="rounded-[1.5rem] bg-white p-5 shadow-card">
+                  <h3 class="font-display text-2xl text-forest">Montessori</h3>
+                  <p class="mt-2 text-sm leading-7 text-gray-600">Autonomía y ambiente preparado.</p>
+                </div>
+                <div class="rounded-[1.5rem] bg-white p-5 shadow-card">
+                  <h3 class="font-display text-2xl text-forest">Waldorf</h3>
+                  <p class="mt-2 text-sm leading-7 text-gray-600">Desarrollo integral y ritmo del niño.</p>
+                </div>
+                <div class="rounded-[1.5rem] bg-white p-5 shadow-card">
+                  <h3 class="font-display text-2xl text-forest">Freinet</h3>
+                  <p class="mt-2 text-sm leading-7 text-gray-600">Cooperación, experimentación y proyectos.</p>
+                </div>
+              </div>
+
+              <ul class="mt-8 space-y-3 text-base leading-8 text-gray-600">
+                <li><strong class="text-forest">Trabajo personalizado:</strong> se respeta el ritmo de aprendizaje de cada estudiante.</li>
+                <li><strong class="text-forest">No competencia:</strong> se priorizan informes descriptivos por sobre evaluaciones numéricas.</li>
+                <li><strong class="text-forest">Curiosidad y experimentación:</strong> se valora la participación y el descubrimiento por encima de la memorización.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Pedagogía viva</span>
+            <h2 class="mt-4 font-display text-4xl text-forest sm:text-5xl">
+              Pilares de nuestro aprendizaje
+            </h2>
+          </div>
+
+          <div class="mt-10 grid gap-6 lg:grid-cols-3">
+            <article class="rounded-[2rem] border border-[#E8E1D5] bg-white p-7 shadow-card">
+              <p class="text-3xl">🎯</p>
+              <h3 class="mt-4 font-display text-3xl text-forest">Aprendizaje Activo</h3>
+              <p class="mt-4 text-sm leading-7 text-gray-600">
+                Los niños aprenden haciendo, explorando y construyendo su propio conocimiento en talleres y experiencias prácticas.
+              </p>
+              <p class="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-sage">
+                Objetivos: autonomía, confianza, pensamiento práctico
+              </p>
+            </article>
+
+            <article class="rounded-[2rem] border border-[#E8E1D5] bg-white p-7 shadow-card">
+              <p class="text-3xl">📚</p>
+              <h3 class="mt-4 font-display text-3xl text-forest">Lectura y Diálogo</h3>
+              <p class="mt-4 text-sm leading-7 text-gray-600">
+                La lectura compartida y el diálogo reflexivo fortalecen el pensamiento crítico, la expresión y la comprensión profunda.
+              </p>
+              <p class="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-sage">
+                Objetivos: pensamiento crítico, expresión, reflexión
+              </p>
+            </article>
+
+            <article class="rounded-[2rem] border border-[#E8E1D5] bg-white p-7 shadow-card">
+              <p class="text-3xl">🎭</p>
+              <h3 class="mt-4 font-display text-3xl text-forest">Juego y Comunidad</h3>
+              <p class="mt-4 text-sm leading-7 text-gray-600">
+                El juego cooperativo desarrolla empatía, resiliencia y vínculos comunitarios desde el cuerpo y la imaginación.
+              </p>
+              <p class="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-sage">
+                Objetivos: empatía, resiliencia, cohesión comunitaria
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Galería</span>
+            <h2 class="mt-4 font-display text-4xl text-forest sm:text-5xl">
+              Fotos reales que también son parte de la identidad
+            </h2>
+          </div>
+
+          <div class="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            <figure class="group overflow-hidden rounded-[1.8rem] shadow-soft lg:col-span-2">
+              <img
+                src="png/otrasimagenes/niñosjugandoenelcampo.jpg"
+                alt="Niños jugando en el campo"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="group overflow-hidden rounded-[1.8rem] shadow-soft">
+              <img
+                src="png/otrasimagenes/niñopintandoenelcampo.jpg"
+                alt="Niño pintando en el campo"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="group overflow-hidden rounded-[1.8rem] shadow-soft">
+              <img
+                src="png/otrasimagenes/huerto_escolar_campo.jpg"
+                alt="Huerto escolar en el campo"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="group overflow-hidden rounded-[1.8rem] shadow-soft">
+              <img
+                src="png/Fotos_reales/Niñosmirandolanaturaleza.jpg"
+                alt="Niños mirando la naturaleza"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="group overflow-hidden rounded-[1.8rem] shadow-soft">
+              <img
+                src="png/Fotos_reales/Niñotocandoelpiano.jpg"
+                alt="Niño tocando el piano"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="group overflow-hidden rounded-[1.8rem] shadow-soft lg:col-span-2">
+              <img
+                src="png/otrasimagenes/juegosalairelibre.jpg"
+                alt="Juegos al aire libre en la escuela"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div class="grid gap-6 lg:grid-cols-2">
+            <article class="rounded-[2rem] border border-[#E8E1D5] bg-white p-8 shadow-card">
+              <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Validación</span>
+              <h2 class="mt-4 font-display text-3xl text-forest sm:text-4xl">
+                Estudios validados: el camino hacia la libertad
+              </h2>
+              <p class="mt-5 text-base leading-8 text-gray-600">
+                Preparamos a los estudiantes para cumplir satisfactoriamente con los programas del MINEDUC
+                y obtener la validación de estudios mediante Exámenes Libres.
+              </p>
+            </article>
+
+            <article class="rounded-[2rem] border border-[#E8E1D5] bg-white p-8 shadow-card">
+              <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Marco legal</span>
+              <h2 class="mt-4 font-display text-3xl text-forest sm:text-4xl">
+                Respaldo jurídico en Chile
+              </h2>
+              <ul class="mt-5 space-y-3 text-base leading-8 text-gray-600">
+                <li><strong class="text-forest">Constitución Política, Art. 19 N° 10 y 11:</strong> derecho preferente de los padres y libertad de enseñanza.</li>
+                <li><strong class="text-forest">Decreto 2272 de 2007:</strong> normativa MINEDUC para rendición de Exámenes Libres y validación de estudios.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <article class="rounded-[2rem] bg-white p-8 shadow-card">
+              <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Admisión</span>
+              <h2 class="mt-4 font-display text-4xl text-forest">
+                Continua y por afinidad
+              </h2>
+              <p class="mt-5 text-base leading-8 text-gray-600">
+                El proceso de admisión es continuo y prioriza el compromiso de las familias con la educación libre,
+                el respeto al ritmo evolutivo del niño y la comprensión profunda del proyecto educativo.
+              </p>
+              <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-[1.5rem] bg-cream p-5">
+                  <p class="text-sm font-black uppercase tracking-[0.16em] text-sage">Niveles</p>
+                  <p class="mt-2 text-base text-gray-700">Preescolar y Primer Ciclo de Enseñanza Básica</p>
+                </div>
+                <div class="rounded-[1.5rem] bg-cream p-5">
+                  <p class="text-sm font-black uppercase tracking-[0.16em] text-sage">Proyección</p>
+                  <p class="mt-2 text-base text-gray-700">Avanzar hacia un colegio que también imparta educación media</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="rounded-[2rem] bg-forest p-8 text-white shadow-card">
+              <span class="text-xs font-black uppercase tracking-[0.3em] text-white/70">Principios</span>
+              <h2 class="mt-4 font-display text-4xl">
+                Valores que sostienen la comunidad
+              </h2>
+              <ul class="mt-6 space-y-3 text-base leading-8 text-white/85">
+                <li><strong>Libertad:</strong> libre expresión, pensamiento crítico y creatividad.</li>
+                <li><strong>Responsabilidad:</strong> compromiso individual, social y ambiental.</li>
+                <li><strong>Respeto:</strong> diversidad humana, tolerancia y empatía.</li>
+                <li><strong>Integridad:</strong> coherencia entre pensar, decir y hacer.</li>
+                <li><strong>Escuela saludable:</strong> protección del entorno y de la salud física y mental.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <div class="rounded-[2rem] border border-[#E8E1D5] bg-white/75 p-8 text-center shadow-card backdrop-blur-sm">
+            <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Explora más</span>
+            <h2 class="mt-4 font-display text-4xl text-forest sm:text-5xl">
+              Descubre tu metodología de estudio
+            </h2>
+            <p class="mx-auto mt-5 max-w-3xl text-base leading-8 text-gray-600">
+              Si quieres explorar qué enfoque de aprendizaje se acerca más a tu manera de estudiar,
+              entra al quiz local y revisa tu resultado en una página aparte.
+            </p>
+            <a
+              href="quiz.html"
+              class="mt-8 inline-flex items-center justify-center rounded-full bg-forest px-7 py-4 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:-translate-y-0.5 hover:bg-sage"
+            >
+              Ir al quiz de metodología
+            </a>
+          </div>
+        </section>
+
+        <div class="-mb-px mt-16 text-forest">
+          <svg viewBox="0 0 1440 180" class="h-20 w-full sm:h-24" fill="currentColor" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,128L40,117.3C80,107,160,85,240,80C320,75,400,85,480,90.7C560,96,640,96,720,85.3C800,75,880,53,960,58.7C1040,64,1120,96,1200,112C1280,128,1360,128,1400,128L1440,128L1440,181L1400,181C1360,181,1280,181,1200,181C1120,181,1040,181,960,181C880,181,800,181,720,181C640,181,560,181,480,181C400,181,320,181,240,181C160,181,80,181,40,181L0,181Z"></path>
+          </svg>
+        </div>
+
+        <section id="contacto" class="relative overflow-hidden bg-forest">
+          <div class="pointer-events-none absolute left-0 top-16 hidden opacity-60 lg:block">
+            <svg viewBox="0 0 160 220" class="h-44 w-32 text-[#D5B277]">
+              <path fill="currentColor" d="M48 16c-10 26-14 48-10 73 3 19 13 37 30 49-18-4-34-1-47 8 7-24 6-47-2-71C11 51 19 29 48 16Zm52 32c-24 18-41 35-50 58-7 16-6 34 2 50-13-10-28-14-45-13 17-19 29-41 35-67 6-23 22-40 58-28Zm19 71c-16 14-26 29-29 49-2 11 1 22 6 31-9-5-19-6-29-3 11-13 19-26 22-43 4-15 13-28 30-34Z" />
+            </svg>
+          </div>
+          <div class="pointer-events-none absolute bottom-0 right-0 hidden opacity-50 lg:block">
+            <svg viewBox="0 0 170 230" class="h-48 w-36 text-[#C6D4C9]">
+              <path fill="currentColor" d="M88 8c11 23 12 46 7 70-5 21-17 39-36 52 22-2 41 5 58 20-3-25 1-49 12-72 10-24 3-50-41-70Zm-29 58c9 18 12 35 7 54-3 14-11 26-23 35 15-2 28 4 39 13-2-18 1-34 9-51 7-16 4-33-32-51Zm68 66c-7 13-9 25-7 39 2 9 6 16 12 22-9-2-18 1-26 7 1-13-2-26-8-38-5-12-4-26 29-30Z" />
+            </svg>
+          </div>
+
+          <div class="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+            <div class="text-white">
+              <span class="text-xs font-black uppercase tracking-[0.3em] text-[#D7E2D8]">Contáctanos</span>
+              <h2 class="mt-4 font-display text-4xl leading-tight sm:text-5xl">
+                CONTÁCTANOS
+              </h2>
+              <p class="mt-6 max-w-xl text-base leading-8 text-white/80 sm:text-lg">
+                ¿Interesados en que sus hijos formen parte de la Bioaula? Escríbenos para conocer el espacio,
+                conversar sobre admisión y agendar una visita.
+              </p>
+              <div class="mt-8 space-y-4 text-sm uppercase tracking-[0.18em] text-white/65">
+                <p>Ubicación • Sector rural Ñirrimapu Maquehue km 6, Padre las Casas</p>
+                <p>Teléfono • +56 9 7212 7281</p>
+                <p>Correo • infanciainvaluable5@gmail.com</p>
+              </div>
+
+              <div class="mt-8 flex items-center gap-4">
+                <a href="#" class="rounded-full border border-white/20 p-3 transition hover:bg-white/10">
+                  <img src="Iconos/instagram.png" alt="Instagram" class="h-5 w-5 object-contain" />
+                </a>
+                <a href="#" class="rounded-full border border-white/20 p-3 transition hover:bg-white/10">
+                  <img src="Iconos/facebook.png" alt="Facebook" class="h-5 w-5 object-contain" />
+                </a>
+                <a href="#" class="rounded-full border border-white/20 p-3 transition hover:bg-white/10">
+                  <img src="Iconos/tiktok.png" alt="TikTok" class="h-5 w-5 object-contain" />
+                </a>
+              </div>
+            </div>
+
+            <div class="rounded-[2rem] border border-white/15 bg-white/95 p-6 shadow-soft backdrop-blur-xl sm:p-8">
+              <form id="contact-form" class="space-y-5">
+                <div>
+                  <label for="nombre" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-gray-600">
+                    Nombre
+                  </label>
+                  <input
+                    id="nombre"
+                    name="nombre"
+                    type="text"
+                    required
+                    placeholder="Tu nombre"
+                    class="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-base text-gray-800 placeholder:text-gray-400 focus:border-green-300 focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label for="correo" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-gray-600">
+                    Correo
+                  </label>
+                  <input
+                    id="correo"
+                    name="correo"
+                    type="email"
+                    required
+                    placeholder="tu@email.com"
+                    class="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-base text-gray-800 placeholder:text-gray-400 focus:border-green-300 focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label for="mensaje" class="mb-2 block text-sm font-bold uppercase tracking-[0.16em] text-gray-600">
+                    Mensaje
+                  </label>
+                  <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    required
+                    placeholder="Cuéntanos qué te gustaría saber."
+                    class="w-full rounded-2xl border border-gray-200 bg-white px-5 py-4 text-base text-gray-800 placeholder:text-gray-400 focus:border-green-300 focus:outline-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="inline-flex w-full items-center justify-center rounded-full bg-forest px-6 py-4 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:-translate-y-0.5 hover:bg-sage"
+                >
+                  Enviar Mensaje
+                </button>
+
+                <p id="form-feedback" class="hidden rounded-2xl bg-[#EDF4EE] px-4 py-3 text-sm text-forest">
+                  Gracias por escribirnos. Tu mensaje fue registrado visualmente en esta demo.
+                </p>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const contactForm = document.getElementById("contact-form");
+      const feedback = document.getElementById("form-feedback");
+
+      contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        feedback.classList.remove("hidden");
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>
