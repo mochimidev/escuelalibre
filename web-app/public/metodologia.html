@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metodolog&iacute;a | Escuela Libre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { cream: "#FDFBF7", forest: "#5A7160", sage: "#7C9082" },
+            fontFamily: { display: ["Playfair Display", "serif"], body: ["Lato", "sans-serif"] },
+            boxShadow: { soft: "0 18px 45px rgba(54, 71, 59, 0.08)" },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-cream font-body text-gray-800 antialiased">
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <header class="flex flex-col gap-4 rounded-[2rem] border border-[#E8E1D5] bg-white/90 px-5 py-4 shadow-soft sm:flex-row sm:items-center sm:justify-between">
+        <a href="/index.html" class="flex items-center">
+          <img src="/assets/logos/logo-escuela-libre.png" alt="Logo Escuela Libre" class="h-12 w-auto object-contain" />
+        </a>
+        <nav class="flex flex-wrap gap-3 text-sm font-bold uppercase tracking-[0.16em] text-gray-600">
+          <a href="/index.html" class="hover:text-forest">Inicio</a>
+          <a href="/bioaula.html" class="hover:text-forest">Bioaula</a>
+          <a href="/ods.html" class="hover:text-forest">ODS</a>
+          <a href="/quiz.html" class="hover:text-forest">Quiz</a>
+        </nav>
+      </header>
+
+      <section class="mt-6 rounded-[2rem] border border-[#E8E1D5] bg-white/85 p-8 shadow-soft">
+        <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Subp&aacute;gina metodolog&iacute;a</span>
+        <h1 class="mt-4 font-display text-5xl text-forest">Aprender haciendo, sintiendo y pensando</h1>
+        <p class="mt-5 max-w-3xl text-base leading-8 text-gray-600">
+          La metodolog&iacute;a de Escuela Libre se centra en el desarrollo evolutivo del ni&ntilde;o y en una formaci&oacute;n
+          integral donde juego, experiencia, afecto y conocimiento acad&eacute;mico se articulan de forma coherente.
+        </p>
+      </section>
+
+      <section class="mt-8 grid gap-6 md:grid-cols-3">
+        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft">
+          <h2 class="font-display text-2xl text-forest">Montessori</h2>
+          <p class="mt-4 text-sm leading-7 text-gray-600">
+            Favorece autonom&iacute;a, ambiente preparado, materiales concretos y libertad responsable.
+          </p>
+        </article>
+        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft">
+          <h2 class="font-display text-2xl text-forest">Waldorf</h2>
+          <p class="mt-4 text-sm leading-7 text-gray-600">
+            Integra arte, ritmo, creatividad y una mirada respetuosa del desarrollo infantil.
+          </p>
+        </article>
+        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft">
+          <h2 class="font-display text-2xl text-forest">Freinet</h2>
+          <p class="mt-4 text-sm leading-7 text-gray-600">
+            Aporta cooperaci&oacute;n, expresi&oacute;n libre, experimentaci&oacute;n y proyectos conectados con la vida real.
+          </p>
+        </article>
+      </section>
+
+      <section class="mt-8 grid gap-6 lg:grid-cols-[1fr_1fr]">
+        <article class="rounded-[2rem] bg-white p-8 shadow-soft">
+          <h2 class="font-display text-3xl text-forest">Principios del proceso</h2>
+          <ul class="mt-5 space-y-3 text-base leading-8 text-gray-600">
+            <li><strong class="text-gray-800">Trabajo personalizado:</strong> cada estudiante avanza desde su propio ritmo.</li>
+            <li><strong class="text-gray-800">No competencia:</strong> se priorizan informes descriptivos y procesos formativos.</li>
+            <li><strong class="text-gray-800">Curiosidad y experimentaci&oacute;n:</strong> la pregunta y la exploraci&oacute;n son parte central del aprendizaje.</li>
+          </ul>
+        </article>
+        <article class="rounded-[2rem] bg-forest p-8 text-white shadow-soft">
+          <h2 class="font-display text-3xl">Validaci&oacute;n acad&eacute;mica</h2>
+          <p class="mt-5 text-base leading-8 text-white/85">
+            El proyecto prepara a los estudiantes para los programas del MINEDUC y la rendici&oacute;n de Ex&aacute;menes Libres,
+            resguardando una trayectoria formal sin renunciar a una pedagog&iacute;a m&aacute;s humana y significativa.
+          </p>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

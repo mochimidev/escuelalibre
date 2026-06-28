@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bioaula | Escuela Libre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { cream: "#FDFBF7", forest: "#5A7160", sage: "#7C9082" },
+            fontFamily: { display: ["Playfair Display", "serif"], body: ["Lato", "sans-serif"] },
+            boxShadow: { soft: "0 18px 45px rgba(54, 71, 59, 0.08)" },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-cream font-body text-gray-800 antialiased">
+    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <header class="flex flex-col gap-4 rounded-[2rem] border border-[#E8E1D5] bg-white/90 px-5 py-4 shadow-soft sm:flex-row sm:items-center sm:justify-between">
+        <a href="/index.html" class="flex items-center">
+          <img src="/assets/logos/logo-escuela-libre.png" alt="Logo Escuela Libre" class="h-12 w-auto object-contain" />
+        </a>
+        <nav class="flex flex-wrap gap-3 text-sm font-bold uppercase tracking-[0.16em] text-gray-600">
+          <a href="/index.html" class="hover:text-forest">Inicio</a>
+          <a href="/metodologia.html" class="hover:text-forest">Metodolog&iacute;a</a>
+          <a href="/ods.html" class="hover:text-forest">ODS</a>
+          <a href="/quiz.html" class="hover:text-forest">Quiz</a>
+        </nav>
+      </header>
+
+      <section class="mt-6 rounded-[2rem] border border-[#E8E1D5] bg-white/85 p-8 shadow-soft">
+        <span class="text-xs font-black uppercase tracking-[0.3em] text-sage">Subp&aacute;gina bioaula</span>
+        <h1 class="mt-4 font-display text-5xl text-forest">La naturaleza como escenario, herramienta y maestra</h1>
+        <p class="mt-5 max-w-3xl text-base leading-8 text-gray-600">
+          La bioaula es el espacio de aprendizaje privilegiado del proyecto. No es un fondo visual:
+          es un territorio vivo donde se observa, se juega, se cultiva, se cuida y se aprende.
+        </p>
+      </section>
+
+      <section class="mt-8 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+        <figure class="overflow-hidden rounded-[2rem] shadow-soft">
+          <img src="/assets/images/aprender-tierra.png" alt="Aprendizaje en la bioaula" class="h-full w-full object-cover" />
+        </figure>
+        <div class="grid gap-4">
+          <figure class="overflow-hidden rounded-[2rem] shadow-soft">
+            <img src="/assets/images/huerto-escolar.jpg" alt="Huerto escolar" class="h-64 w-full object-cover" />
+          </figure>
+          <figure class="overflow-hidden rounded-[2rem] shadow-soft">
+            <img src="/assets/images/juego-aire-libre.jpg" alt="Juego al aire libre" class="h-64 w-full object-cover" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="mt-8 grid gap-6 md:grid-cols-3">
+        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft">
+          <h2 class="font-display text-2xl text-forest">Educaci&oacute;n ambiental pr&aacute;ctica</h2>
+          <p class="mt-4 text-sm leading-7 text-gray-600">
+            Huerto, compostaje, observaci&oacute;n y trabajo con la tierra como experiencias formativas concretas.
+          </p>
+        </article>
+        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft">
+          <h2 class="font-display text-2xl text-forest">Desarrollo socioemocional</h2>
+          <p class="mt-4 text-sm leading-7 text-gray-600">
+            El espacio natural invita a la cooperaci&oacute;n, al juego libre y al manejo respetuoso de desaf&iacute;os reales.
+          </p>
+        </article>
+        <article class="rounded-[1.75rem] bg-white p-6 shadow-soft">
+          <h2 class="font-display text-2xl text-forest">V&iacute;nculo cultural</h2>
+          <p class="mt-4 text-sm leading-7 text-gray-600">
+            La conexi&oacute;n con el entorno rural fortalece pertenencia, memoria territorial y conciencia comunitaria.
+          </p>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

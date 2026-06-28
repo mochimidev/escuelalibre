@@ -1,10 +1,24 @@
 {
   "hosting": {
-    "public": "Y",
+    "public": "web-app/public",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/web-app/**",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/public/**",
+        "destination": "/",
+        "type": 301
+      }
     ],
     "rewrites": [
       {
